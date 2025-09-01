@@ -10,7 +10,7 @@ import {
   DialogTitle, 
   DialogTrigger 
 } from "@/components/ui/dialog";
-import { QuestionManager, Question, Quiz } from "@/components/QuizManager";
+import { QuestionManager, Question, Quiz } from "@/components/teacher/QuizManager";
 
 // Component for creating/editing a quiz
 function QuizFormDialog({ quiz, onSave, trigger }: { 
