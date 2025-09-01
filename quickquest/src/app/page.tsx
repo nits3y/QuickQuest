@@ -44,7 +44,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <TeacherLoginDialog>
                 <Button size="lg" className="text-lg px-8 py-6">
-                  Start Teaching 🎓
+                  Login as Teacher
                 </Button>
               </TeacherLoginDialog>
               <StudentJoinDialog />

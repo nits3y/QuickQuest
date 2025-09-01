@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { isValidExamCode } from "@/lib/quizLoader";
 import { 
   Dialog, 
   DialogContent, 
@@ -21,11 +22,19 @@ export function StudentJoinDialog({ children }: { children?: React.ReactNode }) 
     e.preventDefault();
     setIsLoading(true);
     
+    // Validate exam code first
+    if (!isValidExamCode(examId)) {
+      setIsLoading(false);
+      alert("Invalid exam code. Please check with your teacher and try again.");
+      return;
+    }
+    
     // Simulate joining exam process - replace with actual logic
     setTimeout(() => {
       console.log("Student joining exam:", { fullName, examId });
       setIsLoading(false);
-      // Handle successful join (redirect to exam waiting room, show success message, etc.)
+      // Handle successful join (redirect to exam page)
+      window.location.href = `/student/${examId}?name=${encodeURIComponent(fullName)}`;
     }, 1000);
   };
 
@@ -34,7 +43,7 @@ export function StudentJoinDialog({ children }: { children?: React.ReactNode }) 
       <DialogTrigger asChild>
         {children || (
           <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-            Join as Student 📝
+            Join Exam
           </Button>
         )}
       </DialogTrigger>
@@ -74,15 +83,17 @@ export function StudentJoinDialog({ children }: { children?: React.ReactNode }) 
             </label>
             <input
               id="examId"
-              type="text"
-              placeholder="e.g., MATH101-2024"
+              type="number"
+              placeholder="e.g., 12345"
               value={examId}
-              onChange={(e) => setExamId(e.target.value.toUpperCase())}
+              onChange={(e) => setExamId(e.target.value)}
               className="w-full px-3 py-2 border border-input rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent font-mono"
               required
+              min="1"
+              max="999999"
             />
             <p className="text-xs text-muted-foreground">
-              Enter the exam ID provided by your teacher
+              Enter the numeric exam ID provided by your teacher (numbers only)
             </p>
           </div>
           <div className="flex flex-col gap-3 pt-4">
