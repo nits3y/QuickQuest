@@ -1,4 +1,16 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { 
+  Dialog, 
+  DialogContent, 
+  DialogDescription, 
+  DialogHeader, 
+  DialogTitle, 
+  DialogTrigger 
+} from "@/components/ui/dialog";
+import { TeacherLoginDialog, TeacherLoginForm } from "@/components/teacher/TeacherLoginDialog";
+import { StudentJoinDialog } from "@/components/student/StudentJoinDialog";
 
 export default function Home() {
   return (
@@ -11,7 +23,10 @@ export default function Home() {
           </div>
           <span className="text-xl font-bold">QuickQuest</span>
         </div>
-     
+        <div className="flex items-center gap-4">
+          <Button variant="ghost">About</Button>
+          <TeacherLoginDialog />
+        </div>
       </nav>
 
       {/* Hero Section */}
@@ -27,12 +42,12 @@ export default function Home() {
               Perfect for fair, controlled classroom examinations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6">
-                Login as Teacher 🎓
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                Join Exam 📝
-              </Button>
+              <TeacherLoginDialog>
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Start Teaching 🎓
+                </Button>
+              </TeacherLoginDialog>
+              <StudentJoinDialog />
             </div>
           </div>
         </div>
@@ -193,6 +208,28 @@ export default function Home() {
                 <div className="text-2xl mb-2">🔐</div>
                 <span className="font-medium">NextAuth.js</span>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action Section */}
+        <div className="py-20 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Ready to Transform Your Classroom?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Join teachers worldwide who trust QuickQuest for fair and organized examinations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <TeacherLoginDialog>
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Get Started for Free
+                </Button>
+              </TeacherLoginDialog>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+                View Demo
+              </Button>
             </div>
           </div>
         </div>
