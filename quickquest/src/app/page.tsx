@@ -9,8 +9,8 @@ import {
   DialogTitle, 
   DialogTrigger 
 } from "@/components/ui/dialog";
-import { TeacherLoginDialog, TeacherLoginForm } from "@/components/TeacherLoginDialog";
-import { StudentJoinDialog } from "@/components/StudentJoinDialog";
+import { TeacherLoginDialog, TeacherLoginForm } from "@/components/teacher/TeacherLoginDialog";
+import { StudentJoinDialog } from "@/components/student/StudentJoinDialog";
 
 export default function Home() {
   return (

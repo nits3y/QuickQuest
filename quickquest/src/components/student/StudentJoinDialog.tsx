@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   Dialog, 
@@ -9,7 +10,6 @@ import {
   DialogTitle, 
   DialogTrigger 
 } from "@/components/ui/dialog";
-import { useState } from "react";
 
 // Student Join Exam Dialog Component  
 export function StudentJoinDialog({ children }: { children?: React.ReactNode }) {

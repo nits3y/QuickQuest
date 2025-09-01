@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   Dialog, 
@@ -9,7 +10,6 @@ import {
   DialogTitle, 
   DialogTrigger 
 } from "@/components/ui/dialog";
-import { useState } from "react";
 
 // Teacher Login Form Component (separate form logic)
 function TeacherLoginForm() {
@@ -25,7 +25,8 @@ function TeacherLoginForm() {
     setTimeout(() => {
       console.log("Teacher login:", { email, password });
       setIsLoading(false);
-      // Handle successful login (redirect to dashboard, show success message, etc.)
+      // Handle successful login (redirect to dashboard)
+      window.location.href = '/teacher';
     }, 1000);
   };
 
