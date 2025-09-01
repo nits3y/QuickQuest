@@ -11,10 +11,7 @@ export default function Home() {
           </div>
           <span className="text-xl font-bold">QuickQuest</span>
         </div>
-        <div className="flex items-center gap-4">
-          <Button variant="ghost">About</Button>
-          <Button variant="outline">Login</Button>
-        </div>
+     
       </nav>
 
       {/* Hero Section */}
@@ -31,10 +28,10 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-6">
-                Start Teaching 🎓
+                Login as Teacher 🎓
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                Join as Student 📝
+                Join Exam 📝
               </Button>
             </div>
           </div>
@@ -200,25 +197,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Call to Action Section */}
-        <div className="py-20 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Ready to Transform Your Classroom?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Join teachers worldwide who trust QuickQuest for fair and organized examinations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6">
-                Get Started for Free
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                View Demo
-              </Button>
-            </div>
-          </div>
-        </div>
       </main>
 
       {/* Footer */}
@@ -229,10 +207,12 @@ export default function Home() {
               <div className="w-6 h-6 bg-primary rounded flex items-center justify-center text-primary-foreground text-sm font-bold">
                 Q
               </div>
+              {/* "QuickQuest" is bold, and "by Yestin Prado" is smaller and less prominent */}
               <span className="font-semibold">QuickQuest</span>
+              <span className="text-xs text-muted-foreground ml-2 align-bottom">by Yestin Prado</span>
             </div>
             <div className="text-sm text-muted-foreground">
-              © 2024 QuickQuest. Built for educators, by educators.
+              © 2025 QuickQuest. Built for educators, by educators.
             </div>
           </div>
         </div>
